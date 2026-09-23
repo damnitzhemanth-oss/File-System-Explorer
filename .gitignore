@@ -1,4 +1,59 @@
+# Dependencies
 node_modules/
+
+# Build output (bundled by esbuild)
 dist/
+out/
+build/
+
+# Packaged extension
 *.vsix
+
+# VS Code test files
 .vscode-test/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / test output
+coverage/
+.nyc_output/
+*.lcov
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache
+.npm/
+.eslintcache
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories (keep .vscode settings you want to share)
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
