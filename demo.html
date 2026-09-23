@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File System Explorer — VS Code Extension</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+  header { text-align: center; padding: 60px 0 40px; }
+  .badge {
+    display: inline-block;
+    background: #238636;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .tagline {
+    font-size: 1.25rem;
+    color: #8b949e;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: #238636; color: #fff; }
+  .btn-primary:hover { background: #2ea043; }
+  .btn-secondary {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+  }
+  .btn-secondary:hover { background: #30363d; }
+  section { padding: 60px 0; }
+  h2 {
+    font-size: 1.75rem;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .feature {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+  .feature h3 { color: #fff; margin-bottom: 10px; font-size: 1.15rem; }
+  .feature p { color: #8b949e; font-size: 0.95rem; }
+  .feature code {
+    background: #0d1117;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #79c0ff;
+    font-size: 0.85rem;
+  }
+  .steps { max-width: 640px; margin: 0 auto; }
+  .step {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #238636;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+  .step-body { flex: 1; }
+  .step-body p { margin-bottom: 8px; }
+  pre {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    color: #79c0ff;
+  }
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #8b949e;
+    font-size: 0.875rem;
+    border-top: 1px solid #21262d;
+    margin-top: 60px;
+  }
+  footer a { color: #58a6ff; text-decoration: none; }
+  .screenshot {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <span class="badge">VS Code Extension</span>
+    <h1>File System Explorer</h1>
+    <p class="tagline">
+      Instantly generate file trees and view your entire project's code
+      in one document — right from the Command Palette.
+    </p>
+    <div class="buttons">
+      <a href="https://github.com/damnitzihemann-oss/File-System-Explorer" class="btn btn-primary">
+        ⬇ Download .vsix
+      </a>
+      <a href="https://github.com/damnitzihemann-oss/File-System-Explorer" class="btn btn-secondary">
+        ⭐ View on GitHub
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Two Commands. Zero Config.</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🌳</div>
+        <h3>File Structure</h3>
+        <p>
+          Generates a clean tree view of your workspace. Run
+          <code>Ctrl+Shift+P → File Structure</code> and get the full layout instantly.
+        </p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📄</div>
+        <h3>Entire File System</h3>
+        <p>
+          Dumps every file's content into a single document, respecting
+          <code>.gitignore</code> and skipping <code>node_modules</code> automatically.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Install in 3 Steps</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p>Download the latest <code>.vsix</code> file from GitHub Releases.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p>Open VS Code → Extensions view (<code>Ctrl+Shift+X</code>)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p>Click the <strong>...</strong> menu → <strong>Install from VSIX...</strong> → select the file.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <p style="text-align:center; color:#8b949e; margin-top: 12px;">
+      Or from terminal:
+    </p>
+    <pre style="max-width: 640px; margin: 12px auto;">code --install-extension file-system-explorer-0.0.1.vsix</pre>
+  </section>
+
+  <footer>
+    Built for <strong>Hack Dance Starclub</strong> ·
+    <a href="https://github.com/damnitzihemann-oss/File-System-Explorer">GitHub</a> ·
+    MIT License
+  </footer>
+
+</div>
+</body>
+</html>
